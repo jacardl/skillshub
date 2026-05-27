@@ -90,6 +90,32 @@ curl -s -X POST -H "Authorization: token <TOKEN>" \
 
 Token 凭证保存路径：`~/.hermes/keys/github_token.txt`
 
+### GitHub 推送路径规范
+
+所有技能推送到 `jacardl/skillshub` 时，路径格式统一为：
+
+```
+skills/{category}/{skill-name}/SKILL.md
+```
+
+示例：
+```
+skills/operations/aihot/SKILL.md
+skills/product/hv-analysis/SKILL.md
+skills/developer/skill-github-sync/SKILL.md
+skills/ai/9router/SKILL.md
+```
+
+技能先读取内容 → 推送到新路径 → 删除旧路径文件（如果有）。
+
+推送完成后验证：
+```bash
+# 列出所有技能路径
+curl -s -H "Authorization: token $TOKEN" \
+  "https://api.github.com/repos/jacardl/skillshub/git/trees/main?recursive=1" | \
+  python3 -c "import sys,json; [print(f['path']) for f in json.load(sys.stdin)['tree'] if f['path'].endswith('SKILL.md')]"
+```
+
 ## 快速命令
 
 ```bash
@@ -112,4 +138,4 @@ skills_list | grep -A2 "description"
 - API keys/tokens/credentials 一律 [REDACTED]
 - 技能库实际文件数可能少于技能名数量（存在软链接/重命名）
 - 维护后向用户汇报结果，不要静默完成
-- skill-maintenance 自身归入开发岗位
+- skill-maintenance 自身归入助理岗位（productivity）
