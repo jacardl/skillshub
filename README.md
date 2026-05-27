@@ -5,7 +5,8 @@
 ## 安装
 
 ```bash
-npx skills add jacardl/skillshub --path <path>
+npx skills add jacardl/skillshub
+npx skills add jacardl/skillshub --skill skill-github-sync --yes
 ```
 
 ## 7 大岗位分类
