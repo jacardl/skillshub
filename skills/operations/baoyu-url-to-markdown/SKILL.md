@@ -92,7 +92,7 @@ Use `AskUserQuestion` with ALL questions in ONE call:
 
 After user answers, create EXTEND.md at the chosen location, confirm "Preferences saved to [path]", then continue.
 
-Full reference: [references/config/first-time-setup.md](first-time-setup.md)
+Full reference: [references/config/first-time-setup.md](references/config/first-time-setup.md)
 
 ### Supported Keys
 
