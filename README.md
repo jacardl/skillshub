@@ -1,65 +1,76 @@
-# skillshub
+# skillshub · 佳哥技能库
 
-佳哥的 Hermes Agent 技能库中央索引。
+集中管理、分类索引的 Skills 仓库。
 
-## 安装技能
-
-从本仓库安装指定技能（仓库目录下 `skills/` 子目录中的技能可直接安装）：
+## 安装
 
 ```bash
-npx skills add jacardl/skillshub --path skills/<category>/<skill-name>
+npx skills add jacardl/skillshub --path <path>
 ```
 
-示例（安装 aihot）：
+## 7 大岗位分类
 
-```bash
-npx skills add jacardl/skillshub --path skills/operations/aihot
-```
+| 分类 | 说明 |
+|------|------|
+| operations | 运营：AI 资讯、内容创作、流量分发 |
+| product | 产品：需求分析、项目调研 |
+| assistant | 助理：邮件、日历、笔记、地图 |
+| developer | 开发：代码调试、CI/CD、测试 |
+| research | 研究：模型评测、实验追踪 |
+| creative | 创意：设计、插画、动画 |
+| ai | AI/模型：推理加速、模型服务 |
 
-> 提示：`--path` 参数填写仓库中技能对应的子目录路径，见下方分类表。
+## 可安装技能（按分类）
 
-## 可直接安装的技能
+### operations
 
-以下技能已推送至本仓库，可直接用上述命令安装：
+| 技能 | 说明 |
+|------|------|
+| skills/operations/aihot | AI HOT 中文资讯，每日自动抓取 |
+| skills/operations/github-daily-trending | GitHub 黑马日报，多源项目选题 |
+| skills/operations/neat-freak | 知识清理，session 后深度整理 |
+| skills/operations/scrapling | 自适应网页抓取框架 |
 
-| 技能 | 路径 | 说明 |
-|------|------|------|
-| aihot | `skills/operations/aihot` | AI 热点资讯查询 |
-| daily-news-report | `skills/operations/daily-news-report` | 每日早间新闻推送 |
-| github-daily-trending | `skills/operations/github-daily-trending` | GitHub 黑马发现引擎 |
-| hv-analysis | `skills/product/hv-analysis` | 横纵分析法深度研究 |
-| khazix-writer | `skills/operations/khazix-writer` | 公众号长文写作风格 |
-| neat-freak | `skills/operations/neat-freak` | 会话知识清理 |
-| obsidian | `skills/productivity/obsidian` | Obsidian 笔记 |
-| scrapling | `skills/operations/scrapling` | 自适应网页抓取 |
-| 9router | `skills/operations/9router` | 本地/远程 AI 网关 |
-| skill-maintenance | `skills/software-development/skill-maintenance` | 技能库维护流程 |
+### product
 
-## 全量技能分类
+| 技能 | 说明 |
+|------|------|
+| skills/product/hv-analysis | 横纵分析法，深度研究框架 |
 
-以下为本地全部技能索引，部分技能仍在本地维护，陆续推送中。
+### assistant
 
-### 运营（operations）
-`aihot` / `daily-news-report` / `github-daily-trending` / `xurl` / `yuanbao` / `scrapling` / `khazix-writer` / `neat-freak` / `9router` / `ad-creative` / `creative-ops-copilot` / `dogfood` / `creative-thought-partner`
+| 技能 | 说明 |
+|------|------|
+| skills/assistant/obsidian | Obsidian 笔记双向链接 |
 
-### 产品（product）
-`hv-analysis` / `arxiv` / `polymarket` / `llm-wiki` / `blogwatcher` / `claude-design` / `sketch` / `excalidraw` / `ideation`
+### developer
 
-### 助理（productivity）
-`notion` / `obsidian` / `himalaya` / `feishu-file-transfer` / `linear` / `maps` / `pdf` / `pptx` / `powerpoint` / `apple-notes` / `apple-reminders` / `findmy` / `imessage` / `macos-computer-use`
+| 技能 | 说明 |
+|------|------|
+| skills/developer/skill-github-sync | Skills 同步 GitHub 流程 |
+| skills/developer/skill-maintenance | 技能库维护 SOP |
 
-### 开发（software-development）
-`claude-code` / `codex` / `opencode` / `hermes-agent` / `github-pr-workflow` / `github-code-review` / `github-issues` / `github-repo-management` / `python-debugpy` / `node-inspect-debugger` / `systematic-debugging` / `test-driven-development` / `webhook-subscriptions` / `skill-creator` / `skill-maintenance` / `frontend-design` / `subagent-driven-development` / `native-mcp`
+### creative
 
-### 研究（research）
-`evaluating-llms-harness` / `weights-and-biases` / `jupyter-live-kernel` / `dspy` / `scrapling`
+| 技能 | 说明 |
+|------|------|
+| skills/creative/khazix-writer | 公众号长文写作，卡兹克风格 |
 
-### 创意（creative）
-`ascii-art` / `p5js` / `pixel-art` / `manim-video` / `baoyu-comic` / `baoyu-infographic` / `popular-web-designs` / `brand-guidelines` / `canvas-design` / `excalidraw` / `humanizer` / `ideation` / `sketch` / `architecture-diagram`
+### ai
 
-### AI/模型（ai-model）
-`llama-cpp` / `serving-llms-vllm` / `huggingface-hub` / `obliteratus` / `claude-api` / `native-mcp` / `9router` / `scrapling` / `godmode`
+| 技能 | 说明 |
+|------|------|
+| skills/ai/9router | 本地/远程 AI 网关，Op 端路由 |
 
-## 维护
+---
 
-技能库按7个岗位分类，详情见 [skill-maintenance](skills/software-development/skill-maintenance/)。
+## 私有技能仓库
+
+- [jacardl/zhiligithub](https://github.com/jacardl/zhiligithub) — GitHub 黑马长文（17文件）
+- [jacardl/zhilicomments](https://github.com/jacardl/zhilicomments) — 公众号短评（5文件）
+- [jacardl/zhili-publish](https://github.com/jacardl/zhili-publish) — 微信公众号发布（8文件）
+- [jacardl/daily-news-report](https://github.com/jacardl/daily-news-report) — 每日早间日报（4文件）
+
+## 更新日志
+
+- 2026-05-27：重组为 7 大岗位分类，路径统一为 `skills/<category>/<skill-name>`
