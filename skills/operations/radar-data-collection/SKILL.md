@@ -34,21 +34,27 @@ article_date = 北京时间今天日期
 
 字段：`intl_price_usd`, `intl_price_change`, `domestic_price_cny`, `domestic_price_change`
 
-### 第三步：采集国际政治（9Router tavily）
+### 第三步：采集国际政治（统一链路）
 
 搜索 query：`international political news today`
 筛选来源：Reuters / AP / AFP / Al Jazeera / BBC / FT
 验证：每条必须附来源 URL，缺失则丢弃
+
+**采集策略（落地版，强制按顺序执行）**
+1. **主链路：9Router search**（先拿候选链接）
+2. **补全正文：baoyu-url-to-markdown**（把候选链接转 markdown，提取事件细节）
+3. **兜底：9Router web/fetch**（当 baoyu 链路失败时）
+
+> 说明：候选链接如果是频道页/聚合页（如 Reuters world/china 目录页），必须继续下钻到具体事件稿；不能直接入库。
 
 **内容增强要求（强制，服务下游推送）**
 1. 每条必须生成 **中英对照标题**：
    - 中文标题（意译清楚）
    - English Headline（保留原文）
 2. 每条必须生成 **事件介绍**（至少2句）：
-   - 句1：发生了什么（核心事实）
-   - 句2：背景或潜在影响（为什么值得关注）
+   - 第1句：发生了什么（核心事实）
+   - 第2句：背景或潜在影响（为什么值得关注）
 3. 国际政治采集目标：**10~12条**（优先覆盖亚太 / 中东·欧洲 / 美洲）
-4. 若原始结果只有标题，需对来源页做一次抓取补全摘要（9Router fetch-combo 或 scrapling）
 
 字段写入规范：
 - `title`：写中文标题（便于推送直读）
