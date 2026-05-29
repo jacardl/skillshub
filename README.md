@@ -3,7 +3,7 @@
 佳哥私人 Skill 库（OpenClaw / Codex / Claude Code 通用），按岗位分类维护。
 
 - 仓库：`jacardl/skillshub`
-- 技能总数：**25**
+- 技能总数：**26**
 
 ## 安装命令
 
@@ -51,10 +51,11 @@ npx skills add jacardl/skillshub --skill <skill-name> --agent openclaw -y
 - [scrapling](skills/operations/scrapling/SKILL.md)
 - [youtube-transcript](skills/operations/youtube-transcript/SKILL.md)
 
-### 产品策略（`product`，3 个）
+### 产品策略（`product`，4 个）
+- [brand-product-audience-relevance](skills/product/brand-product-audience-relevance/SKILL.md)
 - [competitor-discovery](skills/product/competitor-discovery/SKILL.md)
 - [hv-analysis](skills/product/hv-analysis/SKILL.md)
 - [markdown-to-report](skills/product/markdown-to-report/SKILL.md)
 
 ---
-_README 自动更新：2026-05-28 13:20（Asia/Shanghai）_
+_README 自动更新：2026-05-29 08:52（Asia/Shanghai）_
