@@ -1,0 +1,112 @@
+{
+  "analysis_id": "dabao_jinghuashuang",
+  "input_name": "大宝精华霜",
+  "product_name": "大宝水凝保湿精华霜",
+  "report_title": "大宝水凝保湿精华霜 人群相关性评估",
+  "report_date": "2026-05-28",
+  "match_status": "category_observed",
+  "direct_match_terms": ["大宝", "水凝", "保湿", "精华霜"],
+  "strict_observed_terms": [
+    {
+      "label": "美妆个护",
+      "domain": "purchase",
+      "entity_type": "category",
+      "entity_name": "美妆个护"
+    }
+  ],
+  "sources": [
+    {
+      "name": "大宝官方网站",
+      "url": "https://www.dabao.com/",
+      "date": "2026-05-28",
+      "usage": "品牌官方来源；官网跳转至 Kenvue 大宝品牌页"
+    },
+    {
+      "name": "新浪时尚",
+      "url": "https://fashion.sina.com.cn/b/nw/2014-09-24/1735/doc-ianfzhni9831295.shtml",
+      "date": "2026-05-28",
+      "usage": "产品完整品名、价格、规格、保湿科技、成分和功效"
+    },
+    {
+      "name": "人民网时尚",
+      "url": "https://lady.people.com.cn/n/2014/1021/c1014-25874267.html",
+      "date": "2026-05-28",
+      "usage": "产品定位、价格、规格、长效保湿和成分信息"
+    }
+  ],
+  "product_attributes": {
+    "品牌": "大宝 / Dabao",
+    "规格": "水凝保湿精华霜，50g",
+    "属性": "平价国货保湿面霜；基础护肤；可加厚作为晚安面膜使用",
+    "价格": "公开资料显示上市信息为 28.9 元 / 50g；实际渠道价格可能变化",
+    "买点": "长效保湿、补水锁水、透明质酸、芦荟/海藻/黄瓜等高保水植物精华、清爽不粘腻",
+    "卖点": "大众国货品牌、低价高性价比、日常保湿、换季干燥护理"
+  },
+  "features": {
+    "purchase_categories": {
+      "beauty_category": {
+        "label": "美妆个护购买",
+        "family_label": "品类购买",
+        "entity_name": "美妆个护"
+      }
+    },
+    "profile": {
+      "female": {
+        "label": "女性",
+        "family_label": "核心护肤人群",
+        "rows": [["人口统计学", "性别", "女"]]
+      },
+      "mass_spend_500_3000": {
+        "label": "月消费 500-2,999 元",
+        "family_label": "大众价格承接",
+        "rows": [
+          ["支出", "月均消费金额", "￥500-￥999元"],
+          ["支出", "月均消费金额", "￥1,000-￥1,499元"],
+          ["支出", "月均消费金额", "￥1,500-￥1,999元"],
+          ["支出", "月均消费金额", "￥2,000-￥2,999元"]
+        ]
+      }
+    },
+    "media_categories": {
+      "media_shopping": {"label": "移动购物 App", "category": "移动购物"},
+      "media_social": {"label": "移动社交 App", "category": "移动社交"},
+      "media_video": {"label": "移动视频 App", "category": "移动视频"},
+      "media_news": {"label": "新闻资讯 App", "category": "新闻资讯"}
+    }
+  },
+  "objectives": {
+    "conversion": {
+      "label": "Conversion / 效果转化",
+      "families": {
+        "品类购买基础": ["beauty_category"],
+        "大众价格承接": ["mass_spend_500_3000"],
+        "转化触点": ["media_shopping", "media_social"]
+      }
+    },
+    "brand_mind": {
+      "label": "Brand Mind / 品牌心智",
+      "families": {
+        "品类与核心人群": ["beauty_category", "female"],
+        "大众保湿心智": ["mass_spend_500_3000"],
+        "内容种草触达": ["media_social", "media_video", "media_shopping", "media_news"]
+      }
+    }
+  },
+  "plain_phrases": {
+    "beauty_category": "他们已经更高比例购买美妆个护，说明这个品类在他们身上有真实消费基础",
+    "female": "女性占比更高，更贴近面霜、保湿和基础护肤沟通的核心人群",
+    "mass_spend_500_3000": "中低到中等日常消费人群更多，和大宝精华霜的平价、日常保湿定位更匹配",
+    "media_shopping": "移动购物 App 触达更强，更容易把兴趣转化为下单",
+    "media_social": "社交平台触达更强，更适合做口碑、种草和使用体验扩散",
+    "media_video": "视频平台触达更强，适合讲清楚补水、锁水、晚安面膜等使用场景",
+    "media_news": "新闻资讯触达更强，适合承接国货品牌、成分和安全感信息"
+  },
+  "plain_closing": {
+    "conversion": "这些因素放在一起，说明他们更可能被平价保湿面霜打动，并进一步进入购买或试用。",
+    "brand_mind": "这些因素放在一起，说明他们更容易理解“大宝、平价、长效保湿、日常基础护肤”这套产品故事。"
+  },
+  "auxiliary": {
+    "features": ["beauty_category", "female"],
+    "top_n": 2
+  }
+}
