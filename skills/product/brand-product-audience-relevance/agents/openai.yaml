@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brand Product Audience Relevance"
+  short_description: "Score brand/product fit across CID audiences"
+  default_prompt: "Use $brand-product-audience-relevance to analyze a brand or product against CID age-city audiences."
