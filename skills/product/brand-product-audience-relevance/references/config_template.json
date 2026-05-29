@@ -1,0 +1,80 @@
+{
+  "analysis_id": "example_product",
+  "input_name": "用户输入的品牌或产品名",
+  "product_name": "标准化后的品牌/产品名",
+  "report_title": "标准化后的品牌/产品名 人群相关性评估",
+  "report_date": "YYYY-MM-DD",
+  "match_status": "observed | category_observed | inferred",
+  "direct_match_terms": ["品牌词", "产品词"],
+  "strict_observed_terms": [
+    {
+      "label": "可严格观测的 CID 实体名",
+      "domain": "purchase",
+      "entity_type": "category",
+      "entity_name": "美妆个护"
+    }
+  ],
+  "sources": [
+    {
+      "name": "来源名称",
+      "url": "https://example.com",
+      "date": "YYYY-MM-DD",
+      "usage": "用于补充品牌、规格、属性、价格、买点、卖点"
+    }
+  ],
+  "product_attributes": {
+    "品牌": "",
+    "规格": "",
+    "属性": "",
+    "价格": "",
+    "买点": "",
+    "卖点": ""
+  },
+  "features": {
+    "purchase_categories": {
+      "category_feature_key": {
+        "label": "品类购买名称",
+        "family_label": "品类购买",
+        "entity_name": "CID 中的品类名称"
+      }
+    },
+    "profile": {
+      "profile_feature_key": {
+        "label": "画像特征名称",
+        "family_label": "画像证据族",
+        "rows": [["一级分类", "二级分类", "三级分类"]]
+      }
+    },
+    "media_categories": {
+      "media_feature_key": {
+        "label": "媒体分类名称",
+        "category": "CID 媒体分类名称"
+      }
+    }
+  },
+  "objectives": {
+    "conversion": {
+      "label": "Conversion / 效果转化",
+      "families": {
+        "证据族名称": ["feature_key"]
+      }
+    },
+    "brand_mind": {
+      "label": "Brand Mind / 品牌心智",
+      "families": {
+        "证据族名称": ["feature_key"]
+      }
+    }
+  },
+  "plain_phrases": {
+    "feature_key": "直白解释话术"
+  },
+  "plain_closing": {
+    "conversion": "转化目的的结尾解释",
+    "brand_mind": "品牌心智目的的结尾解释"
+  },
+  "auxiliary": {
+    "features": ["feature_key"],
+    "top_n": 2
+  }
+}
