@@ -38,7 +38,7 @@ npx skills add jacardl/skillshub --skill <skill-name> --agent openclaw -y
 - [skill-github-sync](skills/developer/skill-github-sync/SKILL.md)
 - [skill-maintenance](skills/developer/skill-maintenance/SKILL.md)
 
-### 运营自动化（`operations`，11 个）
+### 运营自动化（`operations`，12 个）
 - [aihot](skills/operations/aihot/SKILL.md)
 - [baoyu-url-to-markdown](skills/operations/baoyu-url-to-markdown/SKILL.md)
 - [geo-content-strategy](skills/operations/geo-content-strategy/SKILL.md)
@@ -46,6 +46,7 @@ npx skills add jacardl/skillshub --skill <skill-name> --agent openclaw -y
 - [geo-strategy-report](skills/operations/geo-strategy-report/SKILL.md)
 - [github-daily-trending](skills/operations/github-daily-trending/SKILL.md)
 - [neat-freak](skills/operations/neat-freak/SKILL.md)
+- [patent-disclosure-skill](skills/operations/patent-disclosure-skill/SKILL.md)
 - [radar-daily-report](skills/operations/radar-daily-report/SKILL.md)
 - [radar-data-collection](skills/operations/radar-data-collection/SKILL.md)
 - [scrapling](skills/operations/scrapling/SKILL.md)
@@ -59,4 +60,4 @@ npx skills add jacardl/skillshub --skill <skill-name> --agent openclaw -y
 - [software-copyright-materials](skills/product/software-copyright-materials/SKILL.md)
 
 ---
-_README 自动更新：2026-05-29 08:52（Asia/Shanghai）_
+_README 自动更新：2026-05-29 13:05（Asia/Shanghai）_
