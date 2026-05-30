@@ -35,6 +35,80 @@ khazix-writer 产出**纯文本**，含【场景标签】标注。zhili-publish 
 
 > ⚠️ **格式说明（2026-05-20 确认）**：zhiliGitHub 支持两种内容结构——**编号盘点**（多项目合集）和**六段式**（单项目介绍）。两种都允许章节标题，与 zhiliComments 共用同一套 HTML 渲染规范（`#f5f4ed` 羊皮纸 + `#1B365D` 墨蓝）。
 
+## ✅ CSS 渲染规范：样式A（标准模板，2026-05-30 固化）
+
+### 样式A 核心参数
+
+| 属性 | 值 |
+|------|-----|
+| 背景色 | `#f5f4ed`（羊皮纸） |
+| 正文字体 | `Georgia, 'Noto Serif SC', serif` |
+| H2 标题 | `border-left: 4px solid #1B365D`，左边框墨蓝高亮 |
+| 强调色（数据/核心） | `#c9553d`（红棕色） |
+| 强调色（关键词/重点） | `#1B365D`（墨蓝） |
+| 警示/核心洞察背景 | `#fff3b0`（淡黄底） |
+| 引言/摘要样式 | 左边框 `#1B365D` + `background:#f0efe8` + 斜体 |
+| 分隔线 | `· · ·` 居中，`color:#c9553d` |
+| 代码块 | `background:#1e1e1e`，白色文字 |
+| 适合标签 | 左边框 `#2d6a4f` + `background:#f0f7f4` |
+| 不适合标签 | 左边框 `#7c6f64` + `background:#f7f5f3` |
+| 正文段落 | `font-size:16px; line-height:1.85; color:#2c2c2c` |
+
+### 标签行规范
+
+```html
+<!-- 分类标签（最多2个） -->
+<span style="display:inline-block;background:#1B365D;color:#fff;font-size:12px;padding:3px 10px;border-radius:2px;margin-right:6px">GitHub</span>
+<span style="display:inline-block;background:#c9553d;color:#fff;font-size:12px;padding:3px 10px;border-radius:2px">黑马项目</span>
+```
+
+### 引言/摘要样式
+
+```html
+<div style="border-left:4px solid #1B365D;padding:14px 18px;background:#f0efe8;margin-bottom:28px;font-size:16px;line-height:1.8;color:#333;font-style:italic">
+  <p style="margin:0">「引言金句或核心洞察一句话。」</p>
+  <p style="margin:8px 0 0;color:#7c6f64;font-size:14px">—— 出处</p>
+</div>
+```
+
+### Pull Quote（独立高亮块）
+
+```html
+<div style="border-left:4px solid #1B365D;padding:14px 18px;background:#f0efe8;margin-bottom:28px;font-size:16px;line-height:1.8;color:#333;font-style:italic">
+  <p style="margin:0">「核心观点一句话。」</p>
+</div>
+```
+
+### 适合/不适合标签
+
+```html
+<!-- 适合 -->
+<div style="margin:16px 0;padding:12px 16px;background:#f0f7f4;border-radius:4px;border-left:3px solid #2d6a4f;">
+  <p style="font-size:14px;color:#1f1d18;margin:0 0 4px 0;"><strong style="color:#2d6a4f;">✅ 适合场景：</strong>具体说明</p>
+</div>
+<!-- 不适合 -->
+<div style="margin:10px 0;padding:12px 16px;background:#f7f5f3;border-radius:4px;border-left:3px solid #7c6f64;">
+  <p style="font-size:14px;color:#1f1d18;margin:0 0 4px 0;"><strong style="color:#7c6f64;">❌ 不适合：</strong>具体说明</p>
+</div>
+```
+
+### 正文高亮规则
+
+- **墨蓝高亮**（关键词/重点）：`<strong style="color:#1B365D;">`
+- **红棕高亮**（数据/核心）：`<strong style="color:#c9553d;">`
+- **黄底高亮**（警示/核心洞察）：`<strong style="background:#fff3b0;">`
+
+### 完整模板文件
+
+标准模板已固化在 `references/article-template.html`，生成文章时优先复制此文件修改内容。
+
+### ❌ 禁止事项
+
+- 禁止使用纯白色 `#ffffff` 背景（破坏羊皮纸风格一致性）
+- 禁止使用 `#00d4aa` 等亮绿色作为主色调（仅Styles D/E 实验性布局可用）
+- 禁止删除 `font-family` 中的 `Georgia`（英文衬线保证原文韵味）
+- 禁止省略 mmbiz 图片（草稿箱 API 硬性拦截无图文章）
+
 ### 一、「写在前面」开头（必写）
 
 开头用 2-3 段建立背景，不用章节标题，直接进入场景。格式：
@@ -555,13 +629,49 @@ on a clean white/light gray background, high contrast, vibrant accent colors (bl
 
 发布任何文章到「直隶按察使」时，必须严格遵守以下 CSS 规格：
 
-**🎨 视觉系统：Kami 羊皮纸（HTML Anything doc-kami-parchment）**
+### 🎨 样式规范：样式A（已固化，2026-05-30 确认）
 
-> 核心理念：「写得像被排过版的纸」，不是 dashboard，不是网页。文字层级靠衬线对比+字号+留白，不靠颜色。
->
-> 参考：https://github.com/nexu-io/html-anything 的 `doc-kami-parchment` skill
+> 样式A是当前唯一标准，所有新文章必须使用此样式。
 
-**硬性视觉签名（不许改）：**
+**样式A特征（4套历史样式中用户选定）**：
+
+| 属性 | 值 | 说明 |
+|------|-----|------|
+| 背景色 | `#f5f4ed`（暖羊皮纸） | 全部文章统一 |
+| 正文字体 | `Georgia,'Noto Serif SC',serif` | 英文衬线+中文衬线 |
+| H2标题 | `border-left:4px solid #00d4aa;padding-left:12px;font-size:20px;font-weight:bold;color:#1B365D` | **左边框是样式A的标志性特征**，不许省略 |
+| H3标题 | `font-size:17px;font-weight:bold;color:#1f1d18` | 无边框，左对齐 |
+| 正文p | `font-size:16px;line-height:1.85;color:#2c2c2c;margin:0 0 14px 0` | 行高1.85 |
+| 强调色1 | `#1B365D`（墨蓝） | 关键词/链接/数据卡片背景 |
+| 强调色2 | `#c9553d`（砖红） | 红色高亮/重点/警示 |
+| 辅助色 | `#2d6a4f`（森绿） | 适合场景标签 |
+| 辅助色 | `#7c6f64`（暖灰） | 次要文字/不适合标签 |
+| 代码块 | `background:#1e1e1e;color:#e8e8e8;font-size:14px` | 深色背景+浅色文字 |
+| 分隔线 | `text-align:center;color:#c9553d;letter-spacing:6px;` 内容 `· · ·` | 砖红色装饰 |
+
+**历史样式参考（4套，均已归档）**：
+
+| 样式 | 背景 | H2风格 | 强调色 | 代码块 |
+|------|------|--------|--------|--------|
+| **A（现行标准）** | `#f5f4ed` | `border-left:4px solid #00d4aa` | `#c9553d` 红 | `#1e1e1e` 深色 |
+| B（极简无衬线） | `#f5f4ed` | `font-size:18px bold` | `#e63946` 红 | `#1e1e1e` 深色 |
+| C（温暖米色） | `#f0efe8` | `border-left:4px solid #1B365D` | `#c9553d` 红 | `#1e1e1e` 深色 |
+| D（暗色封面） | `#0d1828` 深蓝 | 渐变/卡片布局 | 彩色标签 | 深色主题 |
+
+**⚠️ CSS 规范权威来源**：
+
+| 文件 | 用途 | 说明 |
+|------|------|------|
+| `references/streambert-reference.html` | **样式A标准参考** | 已实测正确的HTML输出，H2有左边框，是样式A的准确实现 |
+| `references/article-template.html` | 模板起点 | 结构完整但H2无左边框，**需自行添加** `border-left:4px solid #00d4aa` |
+
+**正确流程（每次写 HTML 前必须执行）**：
+1. `skill_view("zhiligithub", "references/streambert-reference.html")` — 读取样式A的H2左边框实现
+2. 从 `article-template.html` 复制结构作为起点，**然后将所有 H2 改为 streambert-reference 的样式**（添加 `border-left:4px solid #00d4aa;padding-left:12px`）
+3. 生成完毕后，对照 streambert-reference.html 的 CSS 值逐项验证
+4. **严禁省略 H2 的左边框**——这是样式A的标志性特征
+
+> ⚠️ **本节 CSS 规范来源**：整合自 `streambert-reference.html`（已实测正确的 HTML 输出）和用户确认的样式A特征（2026-05-30）。核心签名：#f5f4ed 暖羊皮纸 + #00d4aa 青色 h2 左边框 + #c9553d 砖红色强调 + Georgia 衬线体。
 
 | 属性 | 值 | 说明 |
 |------|-----|------|
@@ -728,6 +838,23 @@ mmx vision describe "/path/to/screenshot.jpg" --prompt "分析这张微信公众
 - 链接：`<a href="...">...</a>`
 - 图片：`width:100%;border-radius:6px`
 
+### ⚠️ 中文乱码问题（\uXXXX 字面量 vs 正常中文）
+
+**现象**：微信草稿箱前端正文显示 `AI Agent \u7ba1\u7406\u5f00\u6e90\u65b0\u683c\u5c38` 而非正常中文。
+
+**根因**：`json.dumps()` 默认 `ensure_ascii=True`，将所有非 ASCII 字符转为 `\uXXXX` 转义序列，WeChat 预览渲染器将其作为字面量直接显示。
+
+**正确修复**：`json.dumps(payload, ensure_ascii=False).encode("utf-8")`，`Content-Type: application/json`（不带 `charset=utf-8`）。
+- `ensure_ascii=False` → 直接输出 UTF-8 原文，WeChat 自己推断编码
+- 禁止在 Content-Type 里加 `charset=utf-8`（会导致 JSON 处理管线无法解码）
+- 脚本位置：`/root/.hermes/skills/openclaw-imports/zhiligithub/scripts/publish_zhili.py` 第 443 行、第 564 行
+
+**错误修复**（不要用）：
+- `ensure_ascii=True`（默认）→ 中文变 `\uXXXX` 字面量
+- `ensure_ascii=False` + `charset=utf-8` → WeChat JSON 管线无法解码
+
+**验证**：前端草稿箱标题+正文都正常显示中文 = 修复正确。
+
 ## 脚本使用
 
 ### 标准发布（无封面图）
@@ -850,11 +977,16 @@ python3 skills/zhili-publish/scripts/publish_zhili.py --cover-only --cover-promp
 - 字号 14px，行高 1.5
 - 禁止裸 `<code>` 没有外层 `<pre>` 包裹
 
-### 文章模板文件（强制使用）
+### 文章模板文件（样式A起点）
 
-⚠️ 写新文章时，**必须**从 `references/article-template.html` 复制模板作为起点，不要从零写 HTML。
+⚠️ 写新文章时，**必须**从 `article-template.html` 复制结构作为起点，**但 CSS 样式必须参照 `streambert-reference.html`**。
 
-模板路径：`references/article-template.html`
+| 文件 | 角色 |
+|------|------|
+| `references/article-template.html` | 结构模板（H2 无左边框，需自行添加） |
+| `references/streambert-reference.html` | **CSS 样式权威**（H2 有 #00d4aa 左边框） |
+
+关键步骤：从 article-template.html 复制后，必须将所有 H2 的 `style="font-size:20px;color:#1B365D;..."` 加上 `border-left:4px solid #00d4aa;padding-left:12px`。
 
 ### ⚠️ 写文章前必读：流式叙事格式对照（先读再写，不要写完再查）
 
@@ -949,6 +1081,87 @@ for m in re.finditer(r'.{20}\*{2}.{20}', html):
 - [ ] 链接：`style="color:#1a73e8;"`
 - [ ] **代码块 `<code>` 必须设置 `color:#e8e8e8` + 等宽字体**，不能用默认颜色（深色背景+默认黑色文字会看不见）
 - [ ] **正文（二、项目介绍）中至少插入一张项目截图**（mmbiz URL 必须嵌入 HTML，脚本 Gate 会强制检查，无图则拒绝发布）
+
+### ✍️ stop-slop 文风诊断（写完必查，适用于所有 AI 写作场景）
+
+> stop-slop 是一套 AI 文风去除术，源于 CrewAI 社区的 `hardikpandya/stop-slop` 项目（7k+ Stars）。核心思路：AI 写东西有套路，套路让人读起来像机器，这套检查表专门治这个。
+>
+> **对中文写作来说框架通用，词条需要本地化重建。**
+
+#### 中文 stop-slop 废话填充词自检表
+
+**出现3个以上，这篇文章就已经有 AI 味了。**
+
+| # | 中文废话 | 替换建议 |
+|---|---------|---------|
+| 1 | 值得注意的是 | 直接删，后面直接说观点 |
+| 2 | 实际上、其实 | 直接删，事实不需要铺垫 |
+| 3 | 那么、那么就 | 很多是噪音，可删 |
+| 4 | 大家/我们都知道 | 谁？直接说 |
+| 5 | 从某种意义上来说 | 要说就说清楚 |
+| 6 | 归根结底 | 直接说结论 |
+| 7 | 不得不承认 | 直接删 |
+| 8 | 想必、应该（猜测语气） | 不确定就别用 |
+| 9 | 毫无疑问 | 直接删，显得心虚 |
+| 10 | 必须承认 | 直接删 |
+| 11 | 我想说的是 | 删，直接开口就说 |
+| 12 | 相信大家都知道 | 谁？不点名就说 |
+
+#### 句式结构检查（5条）
+
+- [ ] 没有「首先、其次、最后、总之」套路（三板斧）
+- [ ] 没有「一方面、另一方面」平衡结构（假辩证）
+- [ ] 没有「随着…的发展」宏大叙事开头
+- [ ] 没有无主语句（「已被广泛认可」「这一观点受到关注」）
+- [ ] 没有因果废话（「因为 X，所以 X，这说明」）
+
+#### 中文 AI 黑话池（用一次扣一分）
+
+```
+突破瓶颈 → 解决
+赋能 → 帮助
+持续迭代 → 更新
+深度赋能 → 提高
+构建生态 → 攒人
+引领变革 → 搅局
+核心价值 → 好处
+解决方案 → 方法
+颠覆性创新 → 新的做法
+助力 → 帮助
+落地 → 实施
+闭环 → 做完
+矩阵 → 组合
+```
+
+#### 快速 12 问（综合判断）
+
+综合判断：超过4个「有问题」→ 打回修改。
+
+| # | 问题 |
+|---|------|
+| 1 | 有废话填充词吗？ |
+| 2 | 有破折号吗？（中文破折号可保留，忽略这条） |
+| 3 | 有「它是…」「这是…」开头吗？ |
+| 4 | 有模糊词吗？（想必、应该、可能） |
+| 5 | 能用一个字说清楚用了两个字吗？ |
+| 6 | 有AI黑话吗？（颠覆、创新、引领、赋能） |
+| 7 | 句长有变化吗？（连续10句一样长=呆板） |
+| 8 | 读出来顺口吗？（不顺口就要改） |
+| 9 | 案例具体吗？（张三李四王五，要具体到人） |
+| 10 | 读起来像机器吗？ |
+| 11 | 你真的想表达这个吗？ |
+| 12 | 有没有「只有卡兹克才会写出来的角度」？ |
+
+#### stop-slop 评分（可选，不强制）
+
+| 维度 | 满分 | 说明 |
+|------|------|------|
+| 直接性 | 10/10 | 没有废话填充词，直接进入 |
+| 节奏感 | 10/10 | 句长有变化，一句话独立成段 |
+| 信任感 | 10/10 | 不吹不黑，承认局限 |
+| 真实感 | 10/10 | 体感记忆，不是知识描述 |
+| 密度 | 10/10 | 信息量大，没有废话段落 |
+| **总分** | **50/50** | **35分以下必须重写** |
 
 ### ⚠️ HTML 拼接技术规范（防止多余空行的根本方法）
 
@@ -1135,7 +1348,7 @@ html = f'<img src="{img_url}" style="width:100%;border-radius:6px;" />'
 | 直接群发 | ❌ 个人号无权限 | 草稿箱手动发布 |
 | 格式丢失 | ⚠️ HTML 无内联样式时平台渲染异常 | 发布前按格式规范检查文章 HTML 结构 |
 | 草稿图片不显示 | ⚠️ API 返回的 media_id 直接用无法渲染 | 必须用 `media/uploadimg` 返回的公网 URL |
-| 中文乱码 | ⚠️ 读取 HTML 文件时必须指定 `encoding="utf-8"`，否则中文变 Unicode 转义序列 | 用 `json.dumps(ensure_ascii=False)` + `encode("utf-8")` |
+| 中文乱码（`\uXXXX` 字面量） | `json.dumps()` 默认 `ensure_ascii=True` 将中文转为 `\uXXXX` 转义序列 | **正确修复**：`json.dumps(payload, ensure_ascii=False).encode("utf-8")`，Content-Type: `application/json`（不带 `charset=utf-8`）。`ensure_ascii=True`（默认）会显示字面量，`ensure_ascii=False` + `charset=utf-8` 会导致 WeChat JSON 管线无法解码 |
 | raw.githubusercontent.com 超时 | ⚠️ GitHub raw 文件无法直接下载 | 用 `api.github.com/repos/{owner}/{repo}/contents/{path}` + base64 解码 |
 | mmx vision describe 替代 vision_analyze | `vision_analyze` 工具返回 401 时，`mmx vision describe` CLI 仍可用 | `mmx vision describe "/path/to/screenshot.jpg" --prompt "..."` |
 | 微信草稿视觉分析失败时的处理 | 当用户发来草稿截图要求修改特定内容（如「去掉与标题重复的部分」「改背景色」）时：若 `mmx vision describe` 返回认证错误或无法分析，**不要尝试部分修补**，而是根据文章标题和主题**重新生成完整版本**，并在消息中告知用户「无法分析截图，已按主题重新生成」。不要等待或反复重试视觉分析。 | **fallback**：重新生成内容 |
@@ -1145,5 +1358,5 @@ html = f'<img src="{img_url}" style="width:100%;border-radius:6px;" />'
 | `urllib.request` multipart 上传报 41005 | Python urllib.request 上传图片返回 `media data missing` | 改用 subprocess + curl：`curl -s -F 'media=@img.jpg' 'https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token=TOKEN&type=image'` |
 | execute_code 的 Python sandbox 看不到 `~/.hermes/.env` 中的 API Key | `os.environ.get('MINIMAX_API_KEY')` 返回空（sandbox 环境隔离） | 用 `bash -c 'source ~/.hermes/.env && python3 -c "import os; print(os.environ[...])"'` 或直接用 `terminal` 执行含凭证的脚本 |
 | WeChat `access_token` 缓存路径 | sandbox 内写 `~/.hermes/mp_token_cache.json` 后，sandbox 下次运行看不到（路径重置） | WeChat API 调用必须在 `terminal` 执行，或通过 `scripts/publish_zhili.py`（它从 `load_config()` 读取 APPSECRET 后内联进脚本）调用 |
-| WeChat草稿正文中文显示为 `\uXXXX` 转义序列 | 根因是 `publish_zhili.py` 中 `create_draft()`（约 line 443）和 main 无封面分支（约 line 564）使用了 `json.dumps(payload, ensure_ascii=False)`。`ensure_ascii=False` 对 title/content 字段影响不同：title 字段 WeChat raw UTF-8 处理正常（不受影响），content 字段（含 HTML）WeChat HTML pipeline 错误处理 raw UTF-8，导致 `\uXXXX` 字面量泄露到前端。**修复**：两处都改为 `json.dumps(payload)` 默认参数（`ensure_ascii=True`）。`fix_double_encoded_content()` 函数**无法阻止**这个问题，它只是被动检测已存在的 `\uXXXX` 序列，不是主动防御手段。诊断：对比同一草稿——标题正常、正文显示 `\uXXXX` → 确认是 content 字段的 `ensure_ascii=False` bug |
+| WeChat草稿正文中文显示为 `\uXXXX` 转义序列 | `json.dumps()` 默认 `ensure_ascii=True` 将中文转为 `\uXXXX`。**正确修复**：`json.dumps(payload, ensure_ascii=False).encode("utf-8")`，Content-Type: `application/json`（不带 `charset=utf-8`）。WeChat 自己推断 UTF-8，不要声明编码。`fix_double_encoded_content()` 函数无法阻止这个问题 |
 | mmx CLI 读取 `~/.hermes/.env` | mmx CLI 用 Node.js 读取环境变量，直接 `mmx auth login` 会报 key 无效 | 用 `bash -c 'source ~/.hermes/.env && mmx auth login --api-key "$MINIMAX_API_KEY"'` 确保环境变量展开 |
