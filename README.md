@@ -3,7 +3,7 @@
 佳哥私人 Skill 库（OpenClaw / Codex / Claude Code 通用），按岗位分类维护。
 
 - 仓库：`jacardl/skillshub`
-- 技能总数：**53**
+- 技能总数：**56**
 
 ## 安装命令
 
@@ -29,8 +29,9 @@ npx skills add jacardl/skillshub --skill <skill-name> --agent openclaw -y
 - [obsidian-cli](skills/assistant/obsidian-cli/SKILL.md)
 - [wechat-article-to-markdown](skills/assistant/wechat-article-to-markdown/SKILL.md)
 
-### 创作内容（`creative`，1 个）
+### 创作内容（`creative`，2 个）
 - [khazix-writer](skills/creative/khazix-writer/SKILL.md)
+- [zhilicomments](skills/creative/zhilicomments/SKILL.md)
 
 ### 开发工程（`developer`，4 个）
 - [setup-matt-pocock-skills](skills/developer/setup-matt-pocock-skills/SKILL.md)
@@ -38,13 +39,15 @@ npx skills add jacardl/skillshub --skill <skill-name> --agent openclaw -y
 - [skill-github-sync](skills/developer/skill-github-sync/SKILL.md)
 - [skill-maintenance](skills/developer/skill-maintenance/SKILL.md)
 
-### 运营自动化（`operations`，37 个）
+### 运营自动化（`operations`，39 个）
 - [aihot](skills/operations/aihot/SKILL.md)
 - [baoyu-url-to-markdown](skills/operations/baoyu-url-to-markdown/SKILL.md)
 - [geo-content-strategy](skills/operations/geo-content-strategy/SKILL.md)
 - [geo-keyword-research](skills/operations/geo-keyword-research/SKILL.md)
 - [geo-strategy-report](skills/operations/geo-strategy-report/SKILL.md)
 - [github-daily-trending](skills/operations/github-daily-trending/SKILL.md)
+- [zhiligithub](skills/operations/zhiligithub/SKILL.md)
+- [zhili-publish](skills/operations/zhili-publish/SKILL.md)
 - [neat-freak](skills/operations/neat-freak/SKILL.md)
 - [patent-disclosure-skill](skills/operations/patent-disclosure-skill/SKILL.md)
 - [radar-daily-report](skills/operations/radar-daily-report/SKILL.md)
@@ -85,4 +88,4 @@ npx skills add jacardl/skillshub --skill <skill-name> --agent openclaw -y
 - [software-copyright-materials](skills/product/software-copyright-materials/SKILL.md)
 
 ---
-_README 自动更新：2026-05-30 11:44（Asia/Shanghai）_
+_README 自动更新：2026-05-30 19:49（Asia/Shanghai）_
