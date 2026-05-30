@@ -440,7 +440,7 @@ def create_draft(token, title, author, digest, content, thumb_media_id, original
         }]
     }
     url = f"https://api.weixin.qq.com/cgi-bin/draft/add?access_token={token}"
-    data = json.dumps(payload).encode("utf-8")
+    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
@@ -475,9 +475,9 @@ def main():
     author = args.author or ""
     digest = args.digest or ""
     content = args.content or ""
-
-    # ⚠️ 强制 UTF-8 读取，防止中文乱码
-    # HTML 内容如从文件读取，必须 open(..., encoding='utf-8')
+    if content and os.path.exists(content):
+        with open(content, 'r', encoding='utf-8') as f:
+            content = f.read()
 
     cover_path = DEFAULT_COVER_PATH
 
@@ -561,7 +561,7 @@ def main():
             }]
         }
         url = f"https://api.weixin.qq.com/cgi-bin/draft/add?access_token={token}"
-        data = json.dumps(payload).encode("utf-8")
+        data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
         with urllib.request.urlopen(req, timeout=30) as resp:
             result = json.loads(resp.read().decode("utf-8"))
