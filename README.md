@@ -1,53 +1,52 @@
 # Skillshub
 
-佳哥私人 Skill 库（OpenClaw / Codex / Claude Code 通用），按岗位分类维护。
-
-- 仓库：`jacardl/skillshub`
-- 技能总数：**56**
+佳哥私人 Skill 库，按岗位分类。
 
 ## 安装命令
 
 ```bash
-npx skills add jacardl/skillshub
+npx skills add jacardl/skillshub --path <path>
 ```
 
-安装单个 skill：
-
+完整路径示例：
 ```bash
-npx skills add jacardl/skillshub --skill <skill-name> --agent openclaw -y
+npx skills add jacardl/skillshub --path skills/developer/skill-github-sync
+npx skills add jacardl/skillshub --path skills/operations/aihot
 ```
 
-## 分类索引
+## 岗位分类索引
 
-### AI（`ai`，2 个）
+### AI模型（ai，2个）
 - [9router](skills/ai/9router/SKILL.md)
 - [mmx-cli](skills/ai/mmx-cli/SKILL.md)
 
-### 助手效率（`assistant`，4 个）
+### 助理（assistant，4个）
 - [find-skills](skills/assistant/find-skills/SKILL.md)
 - [obsidian](skills/assistant/obsidian/SKILL.md)
 - [obsidian-cli](skills/assistant/obsidian-cli/SKILL.md)
 - [wechat-article-to-markdown](skills/assistant/wechat-article-to-markdown/SKILL.md)
 
-### 创作内容（`creative`，2 个）
+### 创意（creative，2个）
 - [khazix-writer](skills/creative/khazix-writer/SKILL.md)
 - [zhilicomments](skills/creative/zhilicomments/SKILL.md)
 
-### 开发工程（`developer`，4 个）
+### 开发（developer，5个）
+- [markitdown](skills/developer/markitdown/SKILL.md)
 - [setup-matt-pocock-skills](skills/developer/setup-matt-pocock-skills/SKILL.md)
 - [skill-creator](skills/developer/skill-creator/SKILL.md)
 - [skill-github-sync](skills/developer/skill-github-sync/SKILL.md)
 - [skill-maintenance](skills/developer/skill-maintenance/SKILL.md)
 
-### 运营自动化（`operations`，39 个）
+### openclaw导入（openclaw-imports，1个）
+- [zhiligithub](skills/openclaw-imports/zhiligithub/SKILL.md)
+
+### 运营（operations，39个）
 - [aihot](skills/operations/aihot/SKILL.md)
 - [baoyu-url-to-markdown](skills/operations/baoyu-url-to-markdown/SKILL.md)
 - [geo-content-strategy](skills/operations/geo-content-strategy/SKILL.md)
 - [geo-keyword-research](skills/operations/geo-keyword-research/SKILL.md)
 - [geo-strategy-report](skills/operations/geo-strategy-report/SKILL.md)
 - [github-daily-trending](skills/operations/github-daily-trending/SKILL.md)
-- [zhiligithub](skills/operations/zhiligithub/SKILL.md)
-- [zhili-publish](skills/operations/zhili-publish/SKILL.md)
 - [neat-freak](skills/operations/neat-freak/SKILL.md)
 - [patent-disclosure-skill](skills/operations/patent-disclosure-skill/SKILL.md)
 - [radar-daily-report](skills/operations/radar-daily-report/SKILL.md)
@@ -79,13 +78,17 @@ npx skills add jacardl/skillshub --skill <skill-name> --agent openclaw -y
 - [seo-sxo](skills/operations/seo-sxo/SKILL.md)
 - [seo-technical](skills/operations/seo-technical/SKILL.md)
 - [youtube-transcript](skills/operations/youtube-transcript/SKILL.md)
+- [zhili-publish](skills/operations/zhili-publish/SKILL.md)
+- [zhiligithub](skills/operations/zhiligithub/SKILL.md)
 
-### 产品策略（`product`，5 个）
+### 产品（product，5个）
 - [brand-product-audience-relevance](skills/product/brand-product-audience-relevance/SKILL.md)
 - [competitor-discovery](skills/product/competitor-discovery/SKILL.md)
 - [hv-analysis](skills/product/hv-analysis/SKILL.md)
 - [markdown-to-report](skills/product/markdown-to-report/SKILL.md)
 - [software-copyright-materials](skills/product/software-copyright-materials/SKILL.md)
 
----
-_README 自动更新：2026-05-30 19:49（Asia/Shanghai）_
+### 社交媒体（social-media，1个）
+- [zhilicomments](skills/social-media/zhilicomments/SKILL.md)
+
+共 8 个分类，59 个技能。
